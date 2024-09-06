@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import logo from "../images/logo-formula-exp.png"
 
 function Header() {
     return ( 
-        <header>
-            <nav>
-                <ul>
-                    <li className="ml-2">
+        <header className="text-lg flex items-center min-h-16 justify-start bg-emerald-500 w-full p-3 font-medium">
+            <h1>Logo</h1>
+            <nav className="w-full mr-2.5">
+                <ul className="flex justify-end gap-8 ">
+                    <li>
                         <Link to= '/live'>Live</Link>
                     </li>
                     <li>
