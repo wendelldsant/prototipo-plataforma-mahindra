@@ -5,7 +5,7 @@ function Header() {
         <header>
             <nav>
                 <ul>
-                    <li>
+                    <li className="ml-2">
                         <Link to= '/live'>Live</Link>
                     </li>
                     <li>
