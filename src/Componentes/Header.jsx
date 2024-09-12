@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "../images/logo-formula-exp.png"
 
 function Header() {
     return ( 
@@ -11,9 +12,6 @@ function Header() {
                     </li>
                     <li>
                         <Link to= '/social'>Social</Link>
-                    </li>
-                    <li>
-                        <Link to= '/market'>Market</Link>
                     </li>
                     <li>
                         <Link to= '/profile'>Profile</Link>
