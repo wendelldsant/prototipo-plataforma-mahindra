@@ -7,15 +7,17 @@ import Profile from './pages/Profile.jsx'
 import Register from './pages/Register.jsx'
 import Social from './pages/Social.jsx'
 import './index.css'
-import MainContain from './Componentes/MainContain'
+import Home from './pages/Home.jsx'
+import Market from './pages/Market.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
     children:[
-      {index:true, element: <MainContain/> },
+      {index:true, element: <Home/> },
       {path: 'social', element: <Social/>},
+      {path: 'market', element: <Market/>},
       {path: 'register', element: <Register/>},
       {path: 'live', element: <Live/>},
       {path: 'profile', element: <Profile/>},
