@@ -1,24 +1,25 @@
 import React from 'react';
 import Buttons from "../Componentes/Buttons"
-import * as verifyFunctions from "../functions/register-functions.js";
 import FormCards from '../Componentes/FormCards.jsx';
 
 function Form() {
-    function handleVerify(event){
-        event.preventDefault(); 
-        const campo1 = document.querySelector("#username").value;
-        verifyFunctions.verifyID(campo1);
-    };
+    // function handleVerify(event){
+    //     event.preventDefault(); 
+    //     const campo1 = document.querySelector("#username").value;
+    //     verifyFunctions.verifyID(campo1);
+    // };
     const registerButtons = [
         {
             id: "btn-formSubmit",
             name: 'Submit',
-            action: {handleVerify}
+            action: console.log('Submitted'),
+            style: 'flex h-10 my-4 bg-emerald-900 text-gray-400 rounded w-20 justify-center'
         },
         {
             id: "btn-voltar",
             name: 'Voltar',
-            action: ''
+            action: console.log('Voltar'),
+            style: 'col-start-3'
         }
     ]
 
@@ -69,12 +70,19 @@ function Form() {
 
 
     return (
-        <form onSubmit={console.log('ok')}>
-            <FormCards data = {formCamposPreenchimento}/>
-            <section className="buttons">
+
+        <section className='
+            grid grid-cols-4
+            w-full justify-items-center
+        '>
+            <div className='col-start-3 col-span-2 w-full mr-10'>
+                <FormCards data = {formCamposPreenchimento}/>
+            </div>
+            <div className='col-start-3 col-span-2'>
                 <Buttons dados = {registerButtons}/>
-            </section>
-        </form>
+            </div>
+
+        </section>
         
     );
 }

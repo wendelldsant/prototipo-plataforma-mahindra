@@ -1,10 +1,12 @@
 function FormCards({data}) {
     return ( 
-        <>{
+        <form className = "bg-gray-700 p-4">
+        {
             data.map((pegaDados, index)=>(
                 <div
-                    className = "form-group"
+                    className = "flex flex-col"
                     id={`campo${index}`}
+                    key={pegaDados.dataType}
                 >
                     <label htmlFor={pegaDados.dataType}>{pegaDados.titulo}</label>
                     <input type="text" id={pegaDados.dataType} />
@@ -12,7 +14,7 @@ function FormCards({data}) {
                 </div>
             ))
         }
-        </>
+       </form> 
      );
 }
 
