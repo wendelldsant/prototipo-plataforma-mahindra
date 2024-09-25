@@ -1,0 +1,29 @@
+[
+    {
+        "titulo": "Camisa Redbull",
+        "imagem": "camisa-red-bull.webp",
+        "preco": "10xp",
+        "detalhes": "linda camisa red bull1"
+    },
+    {
+        "titulo": "Camisa Redbull",
+        "imagem": "camisa-red-bull.webp",
+        "preco": "10xp",
+        "detalhes": "linda camisa red bull2"
+
+    },
+    {
+        "titulo": "Carro",
+        "imagem": "carro.jpg",
+        "preco": "50xp",
+        "detalhes": "carro formula 1"
+
+    },
+    {
+        "titulo": "Carro",
+        "imagem": "carro.jpg",
+        "preco": "50xp",
+        "detalhes": "carro formula 2"
+
+    }
+]
