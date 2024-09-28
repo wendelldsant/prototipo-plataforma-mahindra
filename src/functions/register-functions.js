@@ -63,17 +63,44 @@ function verificaUsernameExistente(username, lista_users){
     }
 }
 
+//funcao para verificar se o login existe na lista de usuarios
+export function verificaLoginExistente(lista_users, username){
+    if(lista_users.some(user => user.userId === username )){
+        lista_users.forEach(user => {
+            if(user.userId == username){
+                return user
+            }
+        }
+        )
+    }
+    else{
+        return false
+    }
+}
 
+//validacao se a senha bate com o username
+export function verificarSenhaxLogin(lista_users, username){
+    for (let user of lista_users) {
+        if (user.userId === username) {
+            return user;
+        }
+    }
+    return false; 
+}
 
 export function verificaSenha(senha, confirm_senha){
     let senha_check = passwordRequirements(senha);
     if (senha_check){
        if(senha != confirm_senha){
+            alert('Cadastro não aceito - As senhas não conferem.')
             return false;
        } 
        else{    
             return true;
        }
+    }
+    else{
+        alert('Cadastro não aceito - Verifique os requisitos de senha.')
     }
 
 }
