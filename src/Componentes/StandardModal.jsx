@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function StandardModal({handleCloseModal}) {
+function StandardModal({handleCloseModal , atributes}) {
 
 
   return (
@@ -71,10 +71,10 @@ function StandardModal({handleCloseModal}) {
             </svg>
           </div>
           <h4 className="text-xl text-gray-100 font-semibold mb-5">
-            Your account is activated!
+            {atributes.title}
           </h4>
           <p className="text-gray-300 font-medium">
-            Account has been verified Successfully.
+            {atributes.text}
           </p>
         </div>
         <div className="pt-5 pb-6 px-6 text-right bg-gray-800 -mb-2">
@@ -82,11 +82,14 @@ function StandardModal({handleCloseModal}) {
             onClick={handleCloseModal}
             className="inline-block w-full sm:w-auto py-3 px-5 mb-2 mr-4 text-center font-semibold leading-6 text-gray-200 bg-gray-500 hover:bg-gray-400 rounded-lg transition duration-200"
           >
-            Cancel
+            {atributes.cancelName}
           </button>
-          <button className="inline-block w-full sm:w-auto py-3 px-5 mb-2 text-center font-semibold leading-6 text-blue-50 bg-green-500 hover:bg-green-600 rounded-lg transition duration-200">
-            Confirm
-          </button>
+          {atributes.confirmName && (
+            <button className="inline-block w-full sm:w-auto py-3 px-5 mb-2 text-center font-semibold leading-6 text-blue-50 bg-green-500 hover:bg-green-600 rounded-lg transition duration-200">
+              {atributes.confirmName}
+            </button>
+          )}
+
         </div>
       </div>
     </div>
