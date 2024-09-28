@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import HelpToggle from "./HelpToggle";
 import * as registerFunction from '../functions/register-functions';
-
+import Buttons from "./Buttons";
+import { useNavigate } from 'react-router-dom';
+import StandardModal from "./StandardModal";
 function Forms() {
+    const navigate = useNavigate()
     const helpTexts = {
         senha: 'Sua senha deve conter pelo menos: um número, uma letra maiúscula, uma letra minúscula, 7 caracteres',
         username_text: 'Seu nome de usuário não pode conter mais de 15 caracteres'
@@ -15,6 +18,8 @@ function Forms() {
     const [birthday, setBirthday] = useState('');
     const [profilePic, setProfilePic] = useState('');
     const [lista_users, setListaUsers] = useState([]);
+    const [showModal, setShowModal] = useState(false); // Controle do modal
+
 
     useEffect(() => {
         const users = JSON.parse(localStorage.getItem('lista_users')) || [];
@@ -40,20 +45,25 @@ function Forms() {
         setProfilePic(event.target.value);
     };
 
+    const handleCloseModal = () => {
+        console.log("Modal fechado"); // Adicione este log
+        setShowModal(false);
+        navigate('/'); 
+    };
+
     const handleVerify = (event) => {
         event.preventDefault();
-        console.log(registerFunction.verificaUsername(username, lista_users));
         let profile_username = registerFunction.verificaUsername(username, lista_users);
         let profile_password = registerFunction.verificaSenha(password, passwordConfirm);
-        console.log(profile_username);
-        console.log(profile_password);
 
         if (profile_username && profile_password) {
             const new_user = {
                 userId: username,
                 userCompleteName: name,
                 userPassword: password,
-                userPic: profilePic
+                userPic: profilePic,
+                userBirthday: birthday,
+                userPontuacao: '0'
             };
 
             // Atualiza a lista de usuários e armazena no localStorage
@@ -65,14 +75,36 @@ function Forms() {
                 userId: username,
                 userCompleteName: name,
                 userPassword: password,
-                userPic: profilePic
+                userPic: profilePic,
+                userBirthday: birthday,
+                userPontuacao: '0'
             };
             localStorage.setItem('login_check', JSON.stringify(user_online));
+            setShowModal(true)
         }
     };
 
+
+
+    const buttons = [
+        {
+            handle: handleVerify,
+            title: 'Cadastre-se',
+            divStyle: 'col-span-2 mb-3'
+        }
+    ]
     return (
-        <form className="px-7 h-screen grid justify-center items-center">
+        <form className="px-7 grid justify-center items-center">
+            {showModal && (
+                <StandardModal 
+                    handleCloseModal={handleCloseModal}
+                    atributes={{
+                        title: "Seja bem-vindo ao Emotion-Grid!",
+                        text: 'Cadastro efetuado com sucesso!', 
+                        cancelName: "Conheça nossa plataforma",
+                    }}
+                />
+            )}
             <div className="grid grid-cols-2 gap-6 text-center" id="form">
                 <h1 className="text-2xl col-span-2">Cadastre-Se!</h1>
 
@@ -155,12 +187,7 @@ function Forms() {
                     </div>
                 </div>
 
-                <button
-                    className="col-span-2 outline-none glass shadow-2xl w-full p-3 bg-[#ffffff42] hover:border-[#035ec5] hover:border-solid hover:border-[1px] hover:text-[#035ec5] font-bold"
-                    onClick={handleVerify}
-                >
-                    Cadastre-se!
-                </button>
+        <Buttons dados = {buttons}/>
             </div>
         </form>
     );

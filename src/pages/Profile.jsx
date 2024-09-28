@@ -1,26 +1,41 @@
-import * as profileFunctions from '../functions/profile-functions' 
-import React from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import * as profileFunctions from '../functions/profile-functions';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Buttons from '../Componentes/Buttons';
 
 function Profile() {
-  const lista_users = JSON.parse(localStorage.getItem('lista_users'));
-  const login_check = JSON.parse(localStorage.getItem('login_check'));
-
   const navigate = useNavigate(); 
+  const [user_online, setUserOnline] = useState(null); // Inicializa como null
+
+  useEffect(() => {
+    const lista_users = JSON.parse(localStorage.getItem('lista_users')) || [];
+    const login_check = JSON.parse(localStorage.getItem('login_check'));
+
+    if (login_check && profileFunctions.verifyUser(lista_users, login_check)) {
+      setUserOnline(login_check);
+    } else {
+      setUserOnline(false); 
+    }
+  }, []); 
 
   const handleSair = (event) => {
     event.preventDefault();
     localStorage.setItem('login_check', JSON.stringify(false));
-    setUserOnline('false');
-    navigate('/');
+    setUserOnline(null); // Limpa o usuário logado
+    navigate('/'); // Redireciona para a página inicial
   };
 
-  const [user_online, setUserOnline] = useState(profileFunctions.verifyUser(lista_users, login_check));
-
-  if (!user_online) {
+  if (user_online === false) {
     return <p>Usuário não está logado.</p>;
   }
+
+  const buttons = [
+    {
+      title: 'Sair',
+      handle: handleSair,
+      divStyle: ''
+    }
+  ];
 
   return (
     <div className="container mx-auto my-4">
@@ -39,20 +54,16 @@ function Profile() {
                 <p className="text-lg">{user_online.userCompleteName}</p>
               </div>
               <div>
-                <label className="font-bold">Email</label>
-                <p className="text-lg">{user_online.email || 'Email não fornecido'}</p>
-              </div>
-              <div>
                 <label className="font-bold">Data de Nascimento</label>
-                <p className="text-lg">{user_online.birthday || 'Data não fornecida'}</p>
+                <p className="text-lg">{user_online.userBirthday || 'Data não fornecida'}</p>
               </div>
               <div>
-                <label className="font-bold">Telefone</label>
-                <p className="text-lg">{user_online.phone || '(11) 99999-9999'}</p>
+                <label className="font-bold">ID de Usuário</label>
+                <p className="text-lg">{user_online.userId || 'Data não fornecida'}</p>
               </div>
               <div>
-                <label className="font-bold">Equipe Favorita</label>
-                <p className="text-lg">{user_online.team || 'Não especificada'}</p>
+                <label className="font-bold">Pontuação atual</label>
+                <p className="text-lg">{user_online.userPontuacao || 'Não especificada'}</p>
               </div>
             </div>
           </div>
@@ -61,9 +72,7 @@ function Profile() {
             <hr className="my-2" />
             <p>{user_online.bio || 'Nenhuma biografia fornecida.'}</p>
           </div>
-          <button className="bg-purple-400 px-4 py-2 rounded-full" onClick={handleSair}>
-            Sair
-          </button>
+          <Buttons dados={buttons}/>
         </section>
       )}
     </div>
