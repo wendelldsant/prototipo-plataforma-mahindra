@@ -62,7 +62,10 @@ function Forms() {
             localStorage.setItem('lista_users', JSON.stringify(updated_users));
 
             const user_online = {
-                new_user
+                userId: username,
+                userCompleteName: name,
+                userPassword: password,
+                userPic: profilePic
             };
             localStorage.setItem('login_check', JSON.stringify(user_online));
         }
