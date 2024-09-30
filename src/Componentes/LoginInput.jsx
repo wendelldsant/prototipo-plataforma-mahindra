@@ -65,7 +65,7 @@ function LoginInput() {
                 />
             )}
             <div className="grid grid-cols-2 gap-6 text-center" id="form">
-                <h1 className="text-2xl col-span-2">Login</h1>
+                <h1 className="text-2xl col-span-2  text-blue-900 font-medium">Login</h1>
     
                 <div className="col-span-2">
                     <div className="relative flex items-center">

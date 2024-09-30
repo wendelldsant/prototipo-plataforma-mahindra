@@ -106,7 +106,7 @@ function Forms() {
                 />
             )}
             <div className="grid grid-cols-2 gap-6 text-center" id="form">
-                <h1 className="text-2xl col-span-2">Cadastre-Se!</h1>
+                <h1 className="text-2xl col-span-2 text-blue-900 font-medium">Cadastre-se!</h1>
 
                 <div className="col-span-2 ">
                     <input
