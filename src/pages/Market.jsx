@@ -16,7 +16,7 @@ function Market() {
             setShowMarket(true); // Mostra o formulário se o usuário estiver logado
         } else {
             setUserOnline(false);
-            setShowMarket(false); 
+            setShowMarket(false);
         }
     }, []); 
 
