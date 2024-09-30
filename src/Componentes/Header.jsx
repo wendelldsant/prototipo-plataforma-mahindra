@@ -18,6 +18,9 @@ function Header() {
                             <Link to="/live">Live</Link>
                         </li>
                         <li className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                            <Link to="/social">E-Social</Link>
+                        </li>
+                        <li className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
                             <Link to="/market">Marketplace</Link>
                         </li>
                     </ul>
@@ -101,6 +104,9 @@ function Header() {
                                             </li>
                                             <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
                                                 <Link to="/live">Live</Link>
+                                            </li>
+                                            <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
+                                                <Link to="/social">E-Social</Link>
                                             </li>
                                             <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
                                                 <Link to="/market">Marketplace</Link>

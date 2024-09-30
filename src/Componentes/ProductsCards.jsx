@@ -25,17 +25,24 @@ function ProductsCard({ dados }) {
     setSelectedProduct(null);
   };
 
+  const handlePurchase = () => {
+    alert('Compra confirmada!')
+    setShowPurchase(false)
+  }
+
   return (
     <div>
       {/* Modal de compra */}
       {showPurchase && selectedProduct && (
         <StandardModal
           handleCloseModal={handleCloseModal}
+          handlePurchase={handlePurchase}
           atributes={{
             title: "Confirmação",
             text: `Você deseja trocar seus pontos pelo produto "${selectedProduct.titulo}"?`,
             cancelName: 'Cancelar',
             confirmName: 'Sim',
+
           }}
         />
       )}

@@ -39,7 +39,7 @@ function Profile() {
 
   return (
     <div className="container mx-auto my-4">
-      <h1 className="text-center text-2xl font-bold">Seu Perfil</h1>
+      <h1 className="text-center text-white text-2xl font-bold">Seu Perfil</h1>
       {user_online && (
         <section className="flex flex-wrap justify-center gap-4 my-4">
           <div className="w-full lg:w-1/3 my-3 flex justify-center">

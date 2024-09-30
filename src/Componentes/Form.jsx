@@ -53,6 +53,9 @@ function Forms() {
 
     const handleVerify = (event) => {
         event.preventDefault();
+        if(name ==='' || password===''||birthday==='' ||profilePic===''){
+            alert('Preencha todos os campos')
+        }
         let profile_username = registerFunction.verificaUsername(username, lista_users);
         let profile_password = registerFunction.verificaSenha(password, passwordConfirm);
 

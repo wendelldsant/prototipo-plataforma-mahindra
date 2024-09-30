@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function StandardModal({handleCloseModal , atributes}) {
+function StandardModal({handleCloseModal , atributes, handlePurchase}) {
 
 
   return (
@@ -85,7 +85,9 @@ function StandardModal({handleCloseModal , atributes}) {
             {atributes.cancelName}
           </button>
           {atributes.confirmName && (
-            <button className="inline-block w-full sm:w-auto py-3 px-5 mb-2 text-center font-semibold leading-6 text-blue-50 bg-green-500 hover:bg-green-600 rounded-lg transition duration-200">
+            <button 
+            onClick={handlePurchase}
+            className="inline-block w-full sm:w-auto py-3 px-5 mb-2 text-center font-semibold leading-6 text-blue-50 bg-green-500 hover:bg-green-600 rounded-lg transition duration-200">
               {atributes.confirmName}
             </button>
           )}
