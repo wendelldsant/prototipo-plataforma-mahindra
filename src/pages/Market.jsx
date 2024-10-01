@@ -30,6 +30,11 @@ function Market() {
                     </section>
                 </main>
             )}
+            {!showMarket && (
+                <main className="m-5 p-4 grid grid-cols-5 my-2">
+                    <h1 className="col-span-5 text-3xl text-center">Faça login ou cadastre-se para conhecer nosso Marketplace!</h1>
+                </main>
+            )}
         </>
     );
 }

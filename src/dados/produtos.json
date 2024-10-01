@@ -3,20 +3,47 @@
         "titulo": "Camisa Redbull",
         "imagem": "camisa-red-bull.webp",
         "preco": "10",
-        "detalhes": "linda camisa red bull1"
+        "detalhes": "Camisa Red Bull oficial, modelo 2024!"
     },
     {
-        "titulo": "Camisa Redbull",
-        "imagem": "camisa-red-bull.webp",
-        "preco": "10",
-        "detalhes": "linda camisa red bull2"
+        "titulo": "Boné Tag Heuer",
+        "imagem": "bone-tag.webp",
+        "preco": "12",
+        "detalhes": "Boné Branco Tag Heuer Modelo 2023"
 
     },
     {
         "titulo": "Carro",
         "imagem": "carro.jpg",
         "preco": "50",
-        "detalhes": "carro formula 1"
+        "detalhes": "Carro formula E de brinquedo"
+
+    },
+    {
+        "titulo": "Carro",
+        "imagem": "carro.jpg",
+        "preco": "50",
+        "detalhes": "carro formula 2"
+
+    },
+    {
+        "titulo": "Camisa Redbull",
+        "imagem": "camisa-red-bull.webp",
+        "preco": "10",
+        "detalhes": "Camisa Red Bull oficial, modelo 2024!"
+    },
+    {
+        "titulo": "Boné Tag Heuer",
+        "imagem": "bone-tag.webp",
+        "preco": "12",
+        "detalhes": "Boné Branco Tag Heuer Modelo 2023"
+
+    },
+    {
+        "titulo": "Carro",
+        "imagem": "carro.jpg",
+        "preco": "50",
+        "detalhes": "Carro formula E de brinquedo"
 
     },
     {

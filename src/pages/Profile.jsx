@@ -26,7 +26,9 @@ function Profile() {
   };
 
   if (user_online === false) {
-    return <p>Usuário não está logado.</p>;
+    return(
+      <h1 className="col-span-5 text-3xl text-center my-3">Faça seu Login ou Cadastre-se!</h1>
+    ) 
   }
 
   const buttons = [
