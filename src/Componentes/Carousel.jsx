@@ -3,7 +3,7 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 function Carousel() {
   const images = [
     'carro-formula-E-1.png',
-    'carro-formula-E-2.jpg',
+    'carro-formula-E-1.png',
     'carro-formula-E-3.png'
   ];
 
@@ -20,7 +20,7 @@ function Carousel() {
   return (
     <div className="relative w-full mx-auto overflow-hidden ">
       <div
-        className="flex w-full h-[75vh] transition-transform duration-1000 ease-in-out"
+        className="flex w-full h-[95vh] transition-transform duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${currentIndex * 100}%)`
         }}
@@ -30,7 +30,7 @@ function Carousel() {
             key={index}
             src={image}
             alt={`Slide ${index}`}
-            className="w-full object-cover flex-shrink-0"
+            className="w-full max-h-full object-fit flex-shrink-0"
           />
         ))}
       </div>
