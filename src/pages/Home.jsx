@@ -1,4 +1,3 @@
-import React from "react";
 import CardHomePage from "../Componentes/CardHomePage";
 import Carousel from "../Componentes/Carousel";
 
@@ -27,6 +26,11 @@ function Home() {
     return ( 
         <section>
                 <Carousel/>
+                <section className="gradient-backgroung-blue w-full h-[70vh]">
+                    <div>
+                        <h1>Sobre Nós</h1>
+                    </div>
+                </section>
                 <CardHomePage dadosCards={dadosCards} />
 
         </section>

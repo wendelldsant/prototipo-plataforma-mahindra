@@ -2,8 +2,8 @@ import { useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 function Carousel() {
   const images = [
-    'carro-formula-E-1.png',
-    'carro-formula-E-1.png',
+    'carro-azul-ia.png',
+    'carro-azul-2.jpg',
     'carro-formula-E-3.png'
   ];
 
@@ -20,9 +20,9 @@ function Carousel() {
   return (
     <div className="relative w-full mx-auto overflow-hidden ">
       <div
-        className="flex w-full h-[95vh] transition-transform duration-1000 ease-in-out"
+        className="flex w-full h-[100vh] transition-transform duration-1000 ease-in-out"
         style={{
-          transform: `translateX(-${currentIndex * 100}%)`
+          transform: `translateX(-${currentIndex * 100}%)`,
         }}
       >
         {images.map((image, index) => (
@@ -34,7 +34,6 @@ function Carousel() {
           />
         ))}
       </div>
-
       <button
         onClick={prevSlide}
         className="absolute left-0 top-1/2 transform -translate-y-1/2 text-white p-2 rounded-full shadow-md z-10"
