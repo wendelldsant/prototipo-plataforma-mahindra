@@ -1,5 +1,6 @@
 import React from "react";
 import CardHomePage from "../Componentes/CardHomePage";
+import Carousel from "../Componentes/Carousel";
 
 const dadosCards = [
     {
@@ -25,6 +26,7 @@ const dadosCards = [
 function Home() {
     return ( 
         <section>
+                <Carousel/>
                 <CardHomePage dadosCards={dadosCards} />
 
         </section>
