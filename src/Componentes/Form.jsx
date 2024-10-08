@@ -47,7 +47,15 @@ function Forms() {
 
     const handleCloseModal = () => {
         setShowModal(false);
+
+        // Rola para o topo da página
+        window.scrollTo(0, 0);
+        
+        // Redireciona para a página inicial
         navigate('/');
+        
+        // Atualiza a página
+        window.location.reload();
     };
 
     const handleVerify = (event) => {
@@ -98,6 +106,7 @@ function Forms() {
             divStyle: 'col-span-2 mb-3'
         }
     ];
+    
 
     return (
         <form className="px-7 grid justify-center items-center">
@@ -109,6 +118,7 @@ function Forms() {
                         text: 'Cadastro efetuado com sucesso!', 
                         cancelName: "Conheça nossa plataforma",
                     }}
+                    
                 />
             )}
             <div className="grid grid-cols-2 gap-6 text-center" id="form">
