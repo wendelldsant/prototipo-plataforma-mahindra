@@ -88,7 +88,6 @@ function Social() {
                         <Buttons dados={buttonPost} />
                     </form>
 
-                    <h3 className="text-xl mb-2">Publicações</h3>
 
 
                 </div>
@@ -117,7 +116,7 @@ function Social() {
                                 </div>
                             ))
                         ) : (
-                            <p className="text-gray-500">Seja o primeiro a comentar!</p>
+                            <p className="mx-auto text-gray-500">Seja o primeiro a comentar!</p>
                         )}
                     </div>
                 </section>
