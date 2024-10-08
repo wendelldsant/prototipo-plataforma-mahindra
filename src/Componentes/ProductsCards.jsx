@@ -1,24 +1,38 @@
 import StandardModal from "./StandardModal";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import * as marketFunctions from "../functions/market-functions.js";
 
 function ProductsCard({ dados }) {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showPurchase, setShowPurchase] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
+  const [userOnline, setUserOnline] = useState(null);
+  const [showMarket, setShowMarket] = useState(false);
 
-  // Função para abrir o modal de compra
+  useEffect(() => {
+    const lista_users = JSON.parse(localStorage.getItem('lista_users')) || [];
+    const login_check = JSON.parse(localStorage.getItem('login_check'));
+
+    if (login_check && marketFunctions.verifyUser(lista_users, login_check)) {
+      setUserOnline(login_check);
+      setShowMarket(true);
+    } else {
+      setUserOnline(false);
+      setShowMarket(false);
+    }
+  }, []);
+
   const handlePurchaseConfirm = (product) => {
     setSelectedProduct(product);
     setShowPurchase(true);
   };
 
-  // Função para abrir o modal de detalhes
   const handleDetails = (product) => {
     setSelectedProduct(product);
     setShowDetails(true);
   };
 
-  // Função para fechar o modal
   const handleCloseModal = () => {
     setShowPurchase(false);
     setShowDetails(false);
@@ -26,35 +40,44 @@ function ProductsCard({ dados }) {
   };
 
   const handlePurchase = () => {
-    alert('Compra confirmada!')
-    setShowPurchase(false)
-  }
+    alert('Compra confirmada!');
+    setShowPurchase(false);
+  };
+
+  // Imagens para o modal
+  const loginImage = "block.png"; // URL da imagem quando o usuário não está logado
+  const purchaseImage = "check.webp"; // URL da imagem quando o usuário está logado
 
   return (
     <div>
-      {/* Modal de compra */}
       {showPurchase && selectedProduct && (
         <StandardModal
           handleCloseModal={handleCloseModal}
           handlePurchase={handlePurchase}
           atributes={{
-            title: "Confirmação",
-            text: `Você deseja trocar seus pontos pelo produto "${selectedProduct.titulo}"?`,
+            title: showMarket ? "Confirmação" : "Atenção",
+            text: showMarket
+              ? `Você deseja trocar seus pontos pelo produto "${selectedProduct.titulo}"?`
+              : "Você precisa estar logado para comprar um produto.",
             cancelName: 'Cancelar',
-            confirmName: 'Sim',
-
+            confirmName: showMarket ? 'Sim' : (
+              <Link to="/register">
+                <span className="text-blue-500 cursor-pointer">Fazer Login</span>
+              </Link>
+            ),
+            image: showMarket ? purchaseImage : loginImage,
           }}
         />
       )}
 
-      {/* Modal de detalhes */}
       {showDetails && selectedProduct && (
         <StandardModal
           handleCloseModal={handleCloseModal}
           atributes={{
             title: "Detalhes do Produto",
-            text: selectedProduct.detalhes, // Exibindo os detalhes do produto
+            text: selectedProduct.detalhes,
             cancelName: 'Fechar',
+            image: "check.webp",
           }}
         />
       )}
