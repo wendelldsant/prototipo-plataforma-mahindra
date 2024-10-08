@@ -27,7 +27,7 @@ function Profile() {
     window.scrollTo(0, 0);
     
     // Redireciona para a página inicial
-    navigate('/register');
+    navigate('/');
     
     // Atualiza a página
     window.location.reload();
