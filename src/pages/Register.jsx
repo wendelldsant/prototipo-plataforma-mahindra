@@ -38,6 +38,7 @@ function Register() {
             title: 'Login'
         }
     ];
+    
     const buttonVoltar = [
         {
             handle: handleVoltar,

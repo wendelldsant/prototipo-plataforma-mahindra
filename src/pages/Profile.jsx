@@ -22,8 +22,18 @@ function Profile() {
     event.preventDefault();
     localStorage.setItem('login_check', JSON.stringify(false));
     setUserOnline(null); // Limpa o usuário logado
-    navigate('/'); // Redireciona para a página inicial
+    
+    // Rola para o topo da página
+    window.scrollTo(0, 0);
+    
+    // Redireciona para a página inicial
+    navigate('/register');
+    
+    // Atualiza a página
+    window.location.reload();
   };
+
+
 
   if (user_online === false) {
     return(

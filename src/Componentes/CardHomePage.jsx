@@ -5,7 +5,7 @@ function CardHomePage({ dadosCards }) {
     return (
         <div className="grid grid-cols-6 justify-items-center">
             {dadosCards.map((card, index) => (
-                <div key={index} className="col-span-2 my-5 mx-3">
+                <div key={index} className="lg:col-span-2 md:col-span-6 col-span-6 my-5 mx-3">
                     <div className="group flex flex-col justify-start items-start gap-2 w-96 h-auto duration-500 relative rounded-lg p-4 bg-gray-100 hover:-translate-y-2 hover:shadow-xl shadow-gray-300">
                         <div
                             className="w-full h-40 bg-gray-200 rounded-lg overflow-hidden relative"

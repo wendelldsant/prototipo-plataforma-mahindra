@@ -1,44 +1,63 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CgProfile } from "react-icons/cg";
 import { GiCheckeredFlag } from "react-icons/gi"; // Importa o ícone da bandeira
 
+
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLogged, setIsLogged] = useState(false)
+    const loginCheck = JSON.parse(localStorage.getItem('login_check'));
+
+    useEffect(() => {
+        const loginCheck = JSON.parse(localStorage.getItem('login_check'));
+
+        const userOnline = loginCheck ? loginCheck.userId : false;
+        if (userOnline) {
+            setIsLogged(true)
+        }
+    }, [loginCheck]);
 
     return (
         <div className="bg-gray-900">
             <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
                 <div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
                     <ul className="flex items-center hidden space-x-8 lg:flex">
-                        <li className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                        <li className="text-lg font-medium  tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-500">
                             <Link to="/">Home</Link>
                         </li>
-                        <li className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                        <li className="text-lg font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-500">
                             <Link to="/live">Live</Link>
                         </li>
-                        <li className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
+                        <li className="text-lg font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-500">
                             <Link to="/social">E-Social</Link>
-                        </li>
-                        <li className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
-                            <Link to="/market">Marketplace</Link>
                         </li>
                     </ul>
                     <Link to="/" aria-label="E-Motion Grid" title="E-Motion Grid" className="inline-flex items-center lg:mx-auto">
                         <GiCheckeredFlag className="w-8 h-8 text-white" /> {/* Ícone da bandeira */}
-                        <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
+                        <span className="ml-2 lg:text-3xl sm:text-lg font-extrabold tracking-wide text-gray-100 uppercase">
                             E-Motion Grid
                         </span>
                     </Link>
                     <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
-                        <li className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
-                            <Link to="/register">Faça Login ou Cadastre-se já!</Link>
+                        <li className="text-lg font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-500">
+                            <Link to="/market">Marketplace</Link>
                         </li>
-                        <li className="font-medium tracking-wide text-xl text-gray-100 transition-colors duration-200 hover:text-teal-accent-400">
-                            <Link to="/profile">
-                                <CgProfile />
-                            </Link>
-                        </li>
+                        {!isLogged && (
+                            <li className="text-lg font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-500">
+                                <Link to="/register">Login/Cadastro</Link>
+                            </li>
+                        )}
+
+                        {isLogged && (
+                            <li className="text-lg font-medium tracking-wide text-xl text-gray-100 transition-colors duration-200 hover:text-blue-500">
+                                <Link to="/profile">
+                                    <CgProfile />
+                                </Link>
+                            </li>
+                        )}
+
+
                     </ul>
                     <div className="ml-auto lg:hidden">
                         <button
@@ -99,26 +118,31 @@ function Header() {
                                     </div>
                                     <nav>
                                         <ul className="space-y-4">
-                                            <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
+                                            <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
                                                 <Link to="/">Home</Link>
                                             </li>
-                                            <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
+                                            <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
                                                 <Link to="/live">Live</Link>
                                             </li>
-                                            <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
+                                            <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
                                                 <Link to="/social">E-Social</Link>
                                             </li>
-                                            <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
+                                            <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
                                                 <Link to="/market">Marketplace</Link>
                                             </li>
-                                            <li className="font-medium tracking-wide text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
-                                                <Link to="/register">Faça Login ou Cadastre-se já!</Link>
-                                            </li>
-                                            <li className="font-medium tracking-wide text-xl text-blue-900 transition-colors duration-200 hover:text-teal-accent-400">
-                                                <Link to="/profile">
-                                                    <CgProfile />
-                                                </Link>
-                                            </li>
+                                            {!isLogged && (
+                                                <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
+                                                    <Link to="/register">Faça Login ou Cadastre-se já!</Link>
+                                                </li>
+                                            )}
+
+                                            {isLogged && (
+                                                <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
+                                                    <Link to="/profile">
+                                                        <CgProfile />
+                                                    </Link>
+                                                </li>
+                                            )}
                                         </ul>
                                     </nav>
                                 </div>

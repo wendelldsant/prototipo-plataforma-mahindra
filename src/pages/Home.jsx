@@ -1,5 +1,5 @@
-import React from "react";
 import CardHomePage from "../Componentes/CardHomePage";
+import Carousel from "../Componentes/Carousel";
 
 const dadosCards = [
     {
@@ -24,9 +24,11 @@ const dadosCards = [
 
 function Home() {
     return ( 
-        <section>
-                <CardHomePage dadosCards={dadosCards} />
-
+        <section className="gradient-backgroung-blue ">
+                <Carousel/>
+                <section className="p-5">
+                    <CardHomePage dadosCards={dadosCards} />
+                </section>
         </section>
     );
 }

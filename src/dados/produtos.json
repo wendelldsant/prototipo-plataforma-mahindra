@@ -10,47 +10,41 @@
         "imagem": "bone-tag.webp",
         "preco": "12",
         "detalhes": "Boné Branco Tag Heuer Modelo 2023"
-
     },
     {
-        "titulo": "Carro",
+        "titulo": "Camiseta Nike",
+        "imagem": "camiseta-nike.webp",
+        "preco": "20",
+        "detalhes": "Camiseta Nike oficial, modelo 2024, confortável e estilosa!"
+    },
+    {
+        "titulo": "Relógio Casio",
+        "imagem": "relogio-casio.jpg",
+        "preco": "25",
+        "detalhes": "Relógio Casio clássico, à prova d'água e com luz de LED."
+    },
+    {
+        "titulo": "Mochila Puma",
+        "imagem": "mochila-puma.webp",
+        "preco": "30",
+        "detalhes": "Mochila Puma resistente, ideal para esportes e uso diário."
+    },
+    {
+        "titulo": "Tênis Adidas",
+        "imagem": "tenis-adidas.webp",
+        "preco": "45",
+        "detalhes": "Tênis Adidas de corrida, leve e com excelente amortecimento."
+    },
+    {
+        "titulo": "Carro de brinqudo",
         "imagem": "carro.jpg",
         "preco": "50",
         "detalhes": "Carro formula E de brinquedo"
-
     },
     {
-        "titulo": "Carro",
-        "imagem": "carro.jpg",
-        "preco": "50",
-        "detalhes": "carro formula 2"
-
-    },
-    {
-        "titulo": "Camisa Redbull",
-        "imagem": "camisa-red-bull.webp",
-        "preco": "10",
-        "detalhes": "Camisa Red Bull oficial, modelo 2024!"
-    },
-    {
-        "titulo": "Boné Tag Heuer",
-        "imagem": "bone-tag.webp",
-        "preco": "12",
-        "detalhes": "Boné Branco Tag Heuer Modelo 2023"
-
-    },
-    {
-        "titulo": "Carro",
-        "imagem": "carro.jpg",
-        "preco": "50",
-        "detalhes": "Carro formula E de brinquedo"
-
-    },
-    {
-        "titulo": "Carro",
-        "imagem": "carro.jpg",
-        "preco": "50",
-        "detalhes": "carro formula 2"
-
+        "titulo": "Fone de Ouvido Beats",
+        "imagem": "fone-beats.jpeg",
+        "preco": "70",
+        "detalhes": "Fone de ouvido Beats, som de alta qualidade e confortável para uso prolongado."
     }
 ]
