@@ -45,7 +45,7 @@ function Header() {
                         </li>
                         {!isLogged && (
                             <li className="text-lg font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-500">
-                                <Link to="/register">Faça Login ou Cadastre-se já!</Link>
+                                <Link to="/register">Login/Cadastro</Link>
                             </li>
                         )}
 

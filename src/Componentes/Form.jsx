@@ -4,8 +4,9 @@ import * as registerFunction from '../functions/register-functions';
 import Buttons from "./Buttons";
 import { useNavigate } from 'react-router-dom';
 import StandardModal from "./StandardModal";
+
 function Forms() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const helpTexts = {
         senha: 'Sua senha deve conter pelo menos: um número, uma letra maiúscula, uma letra minúscula, 7 caracteres',
         username_text: 'Seu nome de usuário não pode conter mais de 15 caracteres'
@@ -18,8 +19,7 @@ function Forms() {
     const [birthday, setBirthday] = useState('');
     const [profilePic, setProfilePic] = useState('');
     const [lista_users, setListaUsers] = useState([]);
-    const [showModal, setShowModal] = useState(false); // Controle do modal
-
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const users = JSON.parse(localStorage.getItem('lista_users')) || [];
@@ -46,25 +46,29 @@ function Forms() {
     };
 
     const handleCloseModal = () => {
-        console.log("Modal fechado"); // Adicione este log
         setShowModal(false);
-        navigate('/'); 
+        navigate('/');
     };
 
     const handleVerify = (event) => {
         event.preventDefault();
-        if(name ==='' || password===''||birthday==='' ||profilePic===''){
-            alert('Preencha todos os campos')
+        if (name === '' || password === '' || birthday === '') {
+            alert('Preencha todos os campos');
+            return; // Evita continuar se os campos não forem preenchidos
         }
+
         let profile_username = registerFunction.verificaUsername(username, lista_users);
         let profile_password = registerFunction.verificaSenha(password, passwordConfirm);
+
+        // Define a foto de perfil para "perfil-vazio.jpg" se não houver uma fornecida
+        const finalProfilePic = profilePic || 'perfil-vazio.jpg';
 
         if (profile_username && profile_password) {
             const new_user = {
                 userId: username,
                 userCompleteName: name,
                 userPassword: password,
-                userPic: profilePic,
+                userPic: finalProfilePic,
                 userBirthday: birthday,
                 userPontuacao: '0'
             };
@@ -78,16 +82,14 @@ function Forms() {
                 userId: username,
                 userCompleteName: name,
                 userPassword: password,
-                userPic: profilePic,
+                userPic: finalProfilePic,
                 userBirthday: birthday,
                 userPontuacao: '0'
             };
             localStorage.setItem('login_check', JSON.stringify(user_online));
-            setShowModal(true)
+            setShowModal(true);
         }
     };
-
-
 
     const buttons = [
         {
@@ -95,7 +97,8 @@ function Forms() {
             title: 'Cadastre-se',
             divStyle: 'col-span-2 mb-3'
         }
-    ]
+    ];
+
     return (
         <form className="px-7 grid justify-center items-center">
             {showModal && (
@@ -140,7 +143,7 @@ function Forms() {
 
                 <div className="col-span-2">
                     <input
-                        className="p-3 shadow-2xl glass w-full text-black outline-none focus:border-solid focus:border-[1px] border-[#035ec5]"
+                        className="p-3 shadow-2xl glass w-full text-black outline-none focus:border-solid focus:border-[1px] border-[#035ec5] "
                         type="date"
                         required
                         onChange={handleBirthday}
@@ -155,7 +158,6 @@ function Forms() {
                             placeholder="Foto de Perfil(URL)"
                             id="profile-pic"
                             name="profile-pic"
-                            required
                             onChange={handleProfilePic}
                         />
                     </div>
@@ -190,7 +192,7 @@ function Forms() {
                     </div>
                 </div>
 
-        <Buttons dados = {buttons}/>
+                <Buttons dados={buttons} />
             </div>
         </form>
     );
