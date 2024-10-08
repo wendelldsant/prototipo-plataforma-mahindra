@@ -24,15 +24,17 @@ const dadosCards = [
 
 function Home() {
     return ( 
-        <section>
+        <section className="gradient-backgroung-blue ">
                 <Carousel/>
-                <section className="gradient-backgroung-blue w-full h-[70vh]">
+                <section id="sobreNos" className="w-full h-[70vh] mb-5">
                     <div>
                         <h1>Sobre Nós</h1>
+                        <img src="publico-torcendo.jpeg" alt="" />
                     </div>
                 </section>
-                <CardHomePage dadosCards={dadosCards} />
-
+                <section className="">
+                    <CardHomePage dadosCards={dadosCards} />
+                </section>
         </section>
     );
 }

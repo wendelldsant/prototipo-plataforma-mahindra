@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import Buttons from "./Buttons";
 function Carousel() {
   const images = [
     'carro-azul-ia.png',
@@ -18,9 +19,9 @@ function Carousel() {
   };
 
   return (
-    <div className="relative w-full mx-auto overflow-hidden ">
+    <div className="relative w-full h-screen mx-auto overflow-hidden ">
       <div
-        className="flex w-full h-[100vh] transition-transform duration-1000 ease-in-out"
+        className="flex w-full h-full transition-transform duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${currentIndex * 100}%)`,
         }}

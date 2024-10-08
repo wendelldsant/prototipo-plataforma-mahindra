@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Buttons from "../Componentes/Buttons"
+import { GiCheckeredFlag } from "react-icons/gi";
+import { IoShareSocial } from "react-icons/io5";
+
 
 function Social() {
     const [listaPost, setListaPost] = useState([]);
@@ -31,6 +34,7 @@ function Social() {
         const updatedPosts = listaPost.filter(post => post.idPost !== id);
         setListaPost(updatedPosts);
         localStorage.setItem('posts', JSON.stringify(updatedPosts));
+        alert('Publicação deletada!')
     };
 
     const buttonPost = [{
@@ -48,9 +52,16 @@ function Social() {
             );
         } else {
             return (
-                <div className="max-w-xl mx-auto p-4">
-                    <form 
-                        className="mb-4" 
+                <section className='min-h-screen my-4 mx-4'>
+                <div className="max-w-xl mx-auto">
+                    <div className="flex justify-center items-center gap-3 my-3">
+                        <IoShareSocial className="w-8 h-8 text-blue" /> {/* Ícone da bandeira */}
+                        <span className="lg:text-3xl text-cyan-700 sm:text-lg font-extrabold tracking-wide">
+                            E-SOCIAL
+                        </span>
+                    </div>
+                    <form
+                        className="mb-4"
                         onSubmit={(e) => {
                             e.preventDefault();
                             criaPost({ message, foto: photo, username: userOnline });
@@ -78,16 +89,26 @@ function Social() {
                     </form>
 
                     <h3 className="text-xl mb-2">Publicações</h3>
-                    <div>
+
+
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
                         {listaPost.length > 0 ? (
                             listaPost.map(element => (
-                                <div key={element.idPost} className="border border-gray-300 p-4 mb-2 rounded">
+                                <div
+                                    key={element.idPost}
+                                    className="border border-gray-300 p-4 rounded-lg hover:shadow-lg hover:scale-105 transition transform duration-300 ease-in-out">
                                     <div>
                                         <p className="font-semibold">{element.username}: {element.message}</p>
-                                        {element.foto && <img src={element.foto} alt="Foto do Post" className="w-full h-auto mt-2" />}
+                                        {element.foto && (
+                                            <img
+                                                src={element.foto}
+                                                alt="Foto do Post"
+                                                className="w-full p-2 h-1/2 object-cover mt-2 rounded-lg" />
+                                        )}
                                     </div>
                                     {element.username === userOnline && (
-                                        <button 
+                                        <button
                                             className="mt-2 text-red-500"
                                             onClick={() => deleteMessage(element.idPost)}>
                                             Deletar Post
@@ -99,7 +120,7 @@ function Social() {
                             <p className="text-gray-500">Seja o primeiro a comentar!</p>
                         )}
                     </div>
-                </div>
+                </section>
             );
         }
     };
