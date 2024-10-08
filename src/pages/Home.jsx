@@ -26,13 +26,7 @@ function Home() {
     return ( 
         <section className="gradient-backgroung-blue ">
                 <Carousel/>
-                <section id="sobreNos" className="w-full h-[70vh] mb-5">
-                    <div>
-                        <h1>Sobre Nós</h1>
-                        <img src="publico-torcendo.jpeg" alt="" />
-                    </div>
-                </section>
-                <section className="">
+                <section className="p-5">
                     <CardHomePage dadosCards={dadosCards} />
                 </section>
         </section>
