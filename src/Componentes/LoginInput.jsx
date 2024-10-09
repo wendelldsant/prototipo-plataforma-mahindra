@@ -27,7 +27,8 @@ function LoginInput() {
 
     const handleAutenticar = (event) => {
         event.preventDefault();
-        if (registerFunction.verificaLoginExistente(lista_users, username) !== false) {
+        let verifyUser = registerFunction.verificaLoginExistente(lista_users, username)
+        if (verifyUser !== false || verifyUser!=null) {
             const user = registerFunction.verificarSenhaxLogin(lista_users, username);
             if (user && user.userPassword === password) {
                 localStorage.setItem('login_check', JSON.stringify(user));

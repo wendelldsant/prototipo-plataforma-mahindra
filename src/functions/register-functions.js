@@ -1,4 +1,4 @@
-const char_number_username = 7; // Mantenha isso no escopo do seu arquivo
+const char_number_username = 7; 
 const special_caracteres = ['*', '&', '%', '$', '#', '@', '!'];
 
 export function verificaUsername(username, lista_users) {
@@ -54,7 +54,7 @@ export function passwordRequirements(senha){
     }
 }
 
-function verificaUsernameExistente(username, lista_users){
+export function verificaUsernameExistente(username, lista_users){
     if(lista_users.some(user => user.userId === username)){
         return true;
     }

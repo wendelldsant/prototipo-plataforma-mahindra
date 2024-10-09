@@ -62,7 +62,7 @@ function Forms() {
         event.preventDefault();
         if (name === '' || password === '' || birthday === '') {
             alert('Preencha todos os campos');
-            return; // Evita continuar se os campos não forem preenchidos
+            return;
         }
 
         let profile_username = registerFunction.verificaUsername(username, lista_users);
@@ -96,6 +96,15 @@ function Forms() {
             };
             localStorage.setItem('login_check', JSON.stringify(user_online));
             setShowModal(true);
+        }
+        else if(registerFunction.verificaUsernameExistente(username, lista_users) == true){
+            alert('Nome de usuário já existe')
+        }
+        else if(profile_username === false){
+            alert('Confira o seu id de usuário')
+        }
+        else if(profile_password === false){
+            alert('Confira o sua senha')
         }
     };
 
