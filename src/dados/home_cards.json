@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Transmissão ao vivo",
+        "text": "Acompanhe todos eventos ao vivo da Fórmula E, ganhe pontos e interaja em nosso chat!",
+        "imagem": "cards_home/publico-torcendo.jpeg",
+        "route": "/live"
+    },
+    {
+        "title": "Rede Social",
+        "text": "Acompanhe todos eventos ao vivo da Fórmula E, ganhe pontos e interaja em nosso chat!",
+        "imagem": "cards_home/alguem_mexendo_em_uma_rede_social.jpeg",
+        "route": "/social"
+    },
+    {
+        "title": "Marketplace",
+        "text": "Troque seus pontos por produtos em nosso Marketplace!",
+        "imagem": "cards_home/marketplace.photo.jpg",
+        "route": "/market"
+    },
+    {
+        "title": "Interação",
+        "text": "Quanto mais você interagir, mais pontos!",
+        "imagem": "cards_home/pessoas_torcendo_para_formula_e_porquinho_com.jpeg",
+        "route": "/register"
+    }
+]

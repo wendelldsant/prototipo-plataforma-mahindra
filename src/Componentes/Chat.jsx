@@ -1,7 +1,8 @@
-// src/Componentes/Chat.js
 import React, { useEffect, useState } from 'react';
+import data from "../dados/exemplos_demo.json"
 
 const Chat = () => {
+    const chatMessagesExample = data.chat
     const [listaLiveMessage, setListaLiveMessage] = useState(JSON.parse(localStorage.getItem('liveMessages')) || []);
     const [userOnline, setUserOnline] = useState(JSON.parse(localStorage.getItem('login_check'))?.userId || null);
     const [messageInput, setMessageInput] = useState('');
@@ -17,6 +18,9 @@ const Chat = () => {
         const savedMessages = JSON.parse(localStorage.getItem('liveMessages'));
         if (savedMessages) {
             setListaLiveMessage(savedMessages);
+        }
+        else{
+            setListaLiveMessage(chatMessagesExample)
         }
     }, []);
 
@@ -42,19 +46,19 @@ const Chat = () => {
     };
 
     return (
-        <div className="bg-gray-800 p-4 rounded-lg shadow-lg">
-            <div className="h-64 overflow-y-auto mb-4 p-2 bg-gray-700 rounded-lg">
+        <div className="bg-gray-800 p-4 rounded-lg shadow-lg mx-auto w-full">
+            <div className="lg:h-96 h-52 overflow-y-auto mb-4 p-2 bg-gray-700 rounded-lg">
                 {listaLiveMessage.length === 0 ? (
                     <p className="text-gray-300">Seja o primeiro a comentar!</p>
                 ) : (
                     listaLiveMessage.map((element) => (
-                        <div key={element.idMessage} className="flex justify-between flex-wrap">
-                            <p className={element.username === userOnline ? 'text-green-500' : 'text-white'}>
-                                {element.username}: {element.message}
+                        <div key={element.idMessage} className="flex justify-between flex-wrap my-2">
+                            <p className={element.username === userOnline ? 'text-green-500' : 'text-white'}    >
+                                <strong className='text-blue-300'>{element.username}:</strong> {element.message}
                             </p>
                             {element.username === userOnline && (
-                                <button className="" onClick={() => deleteMessage(element.idMessage)}>
-                                    <i className="fas fa-trash"></i>
+                                <button onClick={() => deleteMessage(element.idMessage)}>
+                                    <i className="fas fa-trash text-red-400"></i>
                                 </button>
                             )}
                         </div>

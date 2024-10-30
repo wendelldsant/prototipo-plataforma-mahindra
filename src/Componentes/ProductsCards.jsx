@@ -90,7 +90,7 @@ function ProductsCard({ dados }) {
           >
             <div>
               <img
-                className="w-full h-40 object-contain rounded-t-lg flex flex-col items-center"
+                className="w-full h-56 object-contain rounded-t-lg flex flex-col items-center"
                 alt={pegaDados.titulo}
                 src={pegaDados.imagem}
               />

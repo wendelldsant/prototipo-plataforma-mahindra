@@ -6,7 +6,7 @@ function Live() {
     return (
         <div className="min-h-screen bg-gray-900 text-white">
             <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
-                <div className="col-span-3 video-section flex justify-center items-center">
+                <div className="lg:col-span-3 video-section flex justify-center items-center">
                     <iframe
                         id="live-video"
                         width="100%"
@@ -20,7 +20,7 @@ function Live() {
                     ></iframe>
                 </div>
 
-                <div className="chat-section">
+                <div className="lg:col-span-1 chat-section flex justify-center items-center">
                     <Chat />
                 </div>
             </div>

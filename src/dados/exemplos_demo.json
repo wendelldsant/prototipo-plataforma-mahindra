@@ -1,0 +1,77 @@
+{
+    "chat": [
+        {
+            "message": "Cada vez mais emocionante a Fórmula E, o investimento é sensacional.",
+            "username": "jonas_senna",
+            "idMessage": 0
+        },
+        {
+            "message": "Incrível ultrapassagem do Di Grassi! Esse é piloto de verdade.",
+            "username": "speed_master99",
+            "idMessage": 1
+        },
+        {
+            "message": "Alguém sabe quando será a próxima corrida?",
+            "username": "racing_girl_23",
+            "idMessage": 2
+        },
+        {
+            "message": "O novo layout dos carros tá demais! Muito futurista.",
+            "username": "auto_fanatic",
+            "idMessage": 3
+        },
+        {
+            "message": "Espero que a equipe do Mortara consiga resolver os problemas de freio para a próxima corrida.",
+            "username": "grid_watcher",
+            "idMessage": 4
+        },
+        {
+            "message": "Acho que o Vandoorne vai levar esse campeonato! Ele está em ótima forma.",
+            "username": "formulaboy",
+            "idMessage": 5
+        },
+        {
+            "message": "Essa pista parece bem desafiadora, cheia de curvas fechadas!",
+            "username": "turbo_fan",
+            "idMessage": 6
+        }
+    ],
+    "posts": [
+        {
+            "message": "Hoje foi dia de mais um evento na Fórmula Truck. Cada vez mais apaixonado por esse evento e pelos caminhões, cada vez mais monstruosos!",
+            "foto": "imagens_posts_exemplos/carros_customizados_correndo.jpeg",
+            "username": "turbo_fan",
+            "idPost": 0
+        },
+        {
+            "message": "Os carros preparados para essa corrida estão incríveis! É cada detalhe que faz toda a diferença na performance.",
+            "foto": "imagens_posts_exemplos/carros_preparados_corrida.jpeg",
+            "username": "race_enthusiast",
+            "idPost": 1
+        },
+        {
+            "message": "Vibração indescritível ao torcer junto com essa multidão! A energia do público faz toda a diferença.",
+            "foto": "imagens_posts_exemplos/homem_torcendo_multidao.jpeg",
+            "username": "gear_head",
+            "idPost": 2
+        },
+        {
+            "message": "Estar na arquibancada é uma experiência única! Ver os carros de perto e sentir a adrenalina da corrida é incrível.",
+            "foto": "imagens_posts_exemplos/pessoas_arquibancada.jpeg",
+            "username": "speed_freak",
+            "idPost": 3
+        },
+        {
+            "message": "Nada como assistir a Fórmula E ao vivo! A torcida aqui é apaixonada e aplaude cada ultrapassagem com muita energia!",
+            "foto": "imagens_posts_exemplos/pessoas_torcendo_para_formula_e.jpeg",
+            "username": "electric_speed",
+            "idPost": 5
+        },
+        {
+            "message": "Um dia inesquecível no evento da Fórmula Truck. Caminhões de alta potência e muita adrenalina na pista!",
+            "foto": "imagens_posts_exemplos/um_evento_automobilistico_relacionado_a_formula_truck (1).jpeg",
+            "username": "truck_maniac",
+            "idPost": 6
+        }
+    ]
+}

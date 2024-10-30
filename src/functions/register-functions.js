@@ -1,17 +1,17 @@
-const char_number_username = 7; // Mantenha isso no escopo do seu arquivo
+const char_number_username = 5; 
 const special_caracteres = ['*', '&', '%', '$', '#', '@', '!'];
 
 export function verificaUsername(username, lista_users) {
-    if (username === '') {
-        return false; 
-    }
     if (username.includes(' ')) {
-        return false; 
-    }
-    if (username.length < char_number_username) {
+        alert('Verifique os requisitos necessários para o nome de usuário.'); 
         return false;
     }
-    if(verificaUsernameExistente(username, lista_users)){
+    else if (username.length < char_number_username) {
+        alert('Verifique os requisitos necessários para o nome de usuário.');
+        return false;
+    }
+    else if(verificaUsernameExistente(username, lista_users)){
+        alert('Nome de usuário já existe. Tente novamente.');
         return false;
     }
     return true; 
@@ -54,7 +54,7 @@ export function passwordRequirements(senha){
     }
 }
 
-function verificaUsernameExistente(username, lista_users){
+export function verificaUsernameExistente(username, lista_users){
     if(lista_users.some(user => user.userId === username)){
         return true;
     }

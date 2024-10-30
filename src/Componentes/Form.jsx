@@ -9,7 +9,7 @@ function Forms() {
     const navigate = useNavigate();
     const helpTexts = {
         senha: 'Sua senha deve conter pelo menos: um número, uma letra maiúscula, uma letra minúscula, 7 caracteres',
-        username_text: 'Seu nome de usuário não pode conter mais de 15 caracteres'
+        username_text: 'Seu nome de usuário não pode conter menos de 5 caracteres'
     };
 
     const [username, setUsername] = useState('');
@@ -62,7 +62,7 @@ function Forms() {
         event.preventDefault();
         if (name === '' || password === '' || birthday === '') {
             alert('Preencha todos os campos');
-            return; // Evita continuar se os campos não forem preenchidos
+            return;
         }
 
         let profile_username = registerFunction.verificaUsername(username, lista_users);
@@ -126,7 +126,7 @@ function Forms() {
 
                 <div className="col-span-2 ">
                     <input
-                        className="capitalize shadow-2xl p-3 ex w-full outline-none focus:border-solid focus:border-[1px] border-[#035ec5] placeholder:italic placeholder:text-slate-400"
+                        className="p-3 shadow-2xl glass w-full placeholder:italic placeholder:text-slate-400 outline-none focus:border-solid border-[#035ec5] focus:border-[1px]"
                         type="text"
                         id="name"
                         name="name"
@@ -153,7 +153,7 @@ function Forms() {
 
                 <div className="col-span-2">
                     <input
-                        className="p-3 shadow-2xl glass w-full text-black outline-none focus:border-solid focus:border-[1px] border-[#035ec5] "
+                        className="p-3 shadow-2xl glass w-full placeholder:italic placeholder:text-slate-400 outline-none focus:border-solid border-[#035ec5] focus:border-[1px]"
                         type="date"
                         required
                         onChange={handleBirthday}
@@ -163,7 +163,7 @@ function Forms() {
                 <div className="col-span-2">
                     <div className="relative flex items-center">
                         <input
-                            className="p-3 glass shadow-2xl w-full placeholder:italic placeholder:text-slate-400 outline-none focus:border-solid focus:border-[1px] border-[#035ec5] pr-10"
+                            className="p-3 shadow-2xl glass w-full placeholder:italic placeholder:text-slate-400 outline-none focus:border-solid border-[#035ec5] focus:border-[1px]"
                             type="url"
                             placeholder="Foto de Perfil(URL)"
                             id="profile-pic"
@@ -176,7 +176,7 @@ function Forms() {
                 <div className="col-span-2">
                     <div className="relative flex items-center">
                         <input
-                            className="p-3 glass shadow-2xl w-full placeholder:italic placeholder:text-slate-400 outline-none focus:border-solid focus:border-[1px] border-[#035ec5] pr-10"
+                            className="p-3 shadow-2xl glass w-full placeholder:italic placeholder:text-slate-400 outline-none focus:border-solid border-[#035ec5] focus:border-[1px]"
                             type="password"
                             placeholder="Senha"
                             id="password"
@@ -189,7 +189,6 @@ function Forms() {
                 </div>
 
                 <div className="col-span-2">
-                    <div className="relative flex items-center">
                         <input
                             className="p-3 glass shadow-2xl w-full placeholder:italic placeholder:text-slate-400 outline-none focus:border-solid focus:border-[1px] border-[#035ec5] pr-10"
                             type="password"
@@ -199,10 +198,11 @@ function Forms() {
                             required
                             onChange={handlePasswordConfirm}
                         />
-                    </div>
                 </div>
-
-                <Buttons dados={buttons} />
+                <div className="mt-4 col-span-2">
+                    <Buttons dados={buttons} />
+                </div>
+                
             </div>
         </form>
     );
