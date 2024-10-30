@@ -13,7 +13,7 @@ function Social() {
     const [message, setMessage] = useState('');
     const [photo, setPhoto] = useState('');
     const loginCheck = JSON.parse(localStorage.getItem('login_check'));
-    const userOnline = loginCheck ? loginCheck.userId : false;
+    const userOnline = loginCheck ? loginCheck.userId : true;  // mudança para demonstracao temporaria, depois trocar para False
 
     useEffect(() => {
         const posts = JSON.parse(localStorage.getItem('posts')) || [];

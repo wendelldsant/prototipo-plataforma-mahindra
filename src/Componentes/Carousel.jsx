@@ -33,7 +33,7 @@ function Carousel() {
 
   return (
     <div className="h-screen flex items-center justify-center">
-      <div className="relative lg:w-111/12 w-11/12 lg:h-5/6 h-full overflow-hidden">
+      <div className="relative  h-full w-full overflow-hidden">
         <div
           className="flex w-full h-full transition-transform duration-1000 ease-in-out"
           style={{
@@ -41,11 +41,11 @@ function Carousel() {
           }}
         >
           {images.map((image, index) => (
-            <div key={index} className="relative flex-shrink-0 w-full h-full rounded-xl">
+            <div key={index} className="relative flex-shrink-0 w-full h-full">
               <img
                 src={image.src}
                 alt={`Slide ${index}`}
-                className="w-full h-full object-fit rounded-xl"
+                className="w-full h-full object-fit"
               />
               <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-center mb-5">
                 <Buttons dados={image.buttonData} />
