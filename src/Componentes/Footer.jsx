@@ -9,14 +9,14 @@ export default function Footer(){
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0">
-                <Link to="/" aria-label="E-Motion Grid" title="E-Motion Grid" className="inline-flex items-center lg:mx-auto">
+                <Link to="/" aria-label="Motion-Grid" title="Motion-Grid" className="inline-flex items-center lg:mx-auto">
                         <GiCheckeredFlag className="w-8 h-8 text-white" /> {/* Ícone da bandeira */}
                         <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                            E-Motion Grid
+                            Motion-Grid
                         </span>
                 </Link>
             <div className="mt-4">
-              <p>&copy; E-motion Grid. Todos os direitos reservados.</p>
+              <p>&copy; Motion-Grid. Todos os direitos reservados.</p>
             </div>
           </div>
 

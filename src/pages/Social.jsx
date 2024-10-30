@@ -2,9 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Buttons from "../Componentes/Buttons"
 import { GiCheckeredFlag } from "react-icons/gi";
 import { IoShareSocial } from "react-icons/io5";
+import dataExample from "../dados/exemplos_demo.json"
 
 
 function Social() {
+
+    const postsExamples = dataExample.posts
+
     const [listaPost, setListaPost] = useState([]);
     const [message, setMessage] = useState('');
     const [photo, setPhoto] = useState('');
@@ -13,7 +17,13 @@ function Social() {
 
     useEffect(() => {
         const posts = JSON.parse(localStorage.getItem('posts')) || [];
-        setListaPost(posts);
+        if (posts.length > 0){
+            setListaPost(posts);
+            console.log(posts.length)
+        }
+        else{
+            setListaPost(postsExamples)
+        }
     }, []);
 
     const criaPost = (dados) => {
@@ -91,14 +101,14 @@ function Social() {
 
 
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 my-6">
                         {listaPost.length > 0 ? (
                             listaPost.map(element => (
                                 <div
                                     key={element.idPost}
                                     className="border border-gray-300 p-4 rounded-lg hover:shadow-lg hover:scale-105 transition transform duration-300 ease-in-out">
                                     <div>
-                                        <p className="font-semibold">{element.username}: {element.message}</p>
+                                        <p className="font-semibold "><strong className='text-blue-700'>{element.username}:</strong> {element.message}</p>
                                         {element.foto && (
                                             <img
                                                 src={element.foto}
@@ -116,7 +126,7 @@ function Social() {
                                 </div>
                             ))
                         ) : (
-                            <p className="mx-auto text-gray-500">Seja o primeiro a comentar!</p>
+                            <p className="mx-auto col-span-1 sm:col-span-2 lg:col-span-3 text-gray-500">Seja o primeiro a comentar!</p>
                         )}
                     </div>
                 </section>

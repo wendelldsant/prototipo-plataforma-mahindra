@@ -40,24 +40,17 @@ function LoginInput() {
     };
 
     const handleCloseModal = () => {
-        console.log("Modal fechado"); // Adicione este log
         setShowModal(false);
-
-        // Rola para o topo da página
         window.scrollTo(0, 0);
-        
-        // Redireciona para a página inicial
         navigate('/');
-        
-        // Atualiza a página
         window.location.reload();
     };
 
     const buttons = [
         {
             handle: () => {
-                handleAutenticar(); // Chama a função de autenticação
-                window.location.reload(); // Recarrega a página
+                handleAutenticar(); 
+                window.location.reload(); 
             },
             divStyle: 'col-span-2 mb-3',
             title: 'Entrar',

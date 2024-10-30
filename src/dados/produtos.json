@@ -1,50 +1,50 @@
 [
     {
         "titulo": "Camisa Redbull",
-        "imagem": "camisa-red-bull.webp",
+        "imagem": "produtos_marketplace_exemplos/camisa-red-bull.webp",
         "preco": "10",
         "detalhes": "Camisa Red Bull oficial, modelo 2024!"
     },
     {
         "titulo": "Boné Tag Heuer",
-        "imagem": "bone-tag.webp",
+        "imagem": "produtos_marketplace_exemplos/bone-tag.webp",
         "preco": "12",
         "detalhes": "Boné Branco Tag Heuer Modelo 2023"
     },
     {
-        "titulo": "Camiseta Nike",
-        "imagem": "camiseta-nike.webp",
-        "preco": "20",
-        "detalhes": "Camiseta Nike oficial, modelo 2024, confortável e estilosa!"
-    },
-    {
-        "titulo": "Relógio Casio",
-        "imagem": "relogio-casio.jpg",
+        "titulo": "Miniatura de Carro de Automobilismo",
+        "imagem": "produtos_marketplace_exemplos/carro_em_miniatura_de_automobilismo.jpeg",
         "preco": "25",
-        "detalhes": "Relógio Casio clássico, à prova d'água e com luz de LED."
+        "detalhes": "Modelo em miniatura de um carro de corrida, ideal para colecionadores!"
     },
     {
-        "titulo": "Mochila Puma",
-        "imagem": "mochila-puma.webp",
-        "preco": "30",
-        "detalhes": "Mochila Puma resistente, ideal para esportes e uso diário."
-    },
-    {
-        "titulo": "Tênis Adidas",
-        "imagem": "tenis-adidas.webp",
-        "preco": "45",
-        "detalhes": "Tênis Adidas de corrida, leve e com excelente amortecimento."
-    },
-    {
-        "titulo": "Carro de brinquedo",
-        "imagem": "carro.jpg",
+        "titulo": "Ingresso para Fórmula E",
+        "imagem": "produtos_marketplace_exemplos/pessoa_segurando_ingressos_para_formula_e.jpeg",
         "preco": "50",
-        "detalhes": "Carro formula E de brinquedo"
+        "detalhes": "Ingresso para assistir à próxima etapa da Fórmula E ao vivo!"
     },
     {
-        "titulo": "Fone de Ouvido Beats",
-        "imagem": "fone-beats.jpeg",
-        "preco": "70",
-        "detalhes": "Fone de ouvido Beats, som de alta qualidade e confortável para uso prolongado."
+        "titulo": "Cupom de Desconto em Abastecimento",
+        "imagem": "produtos_marketplace_exemplos/posto_de_gasolina_vermelho.jpeg",
+        "preco": "5",
+        "detalhes": "Cupom de desconto para abastecimento em postos participantes. Economize e acelere!"
+    },
+    {
+        "titulo": "Experiência em Evento de Automobilismo",
+        "imagem": "produtos_marketplace_exemplos/um_evento_para_f_s_de_automobilismo.jpeg",
+        "preco": "100",
+        "detalhes": "Acesso VIP para um evento exclusivo de automobilismo. Encontre pilotos e veja de perto os carros!"
+    },
+    {
+        "titulo": "Passeio de Kart",
+        "imagem": "produtos_marketplace_exemplos/pessoas_competindo_em_karts.jpeg",
+        "preco": "20",
+        "detalhes": "Sinta a adrenalina das pistas com um passeio de kart em circuito profissional!"
+    },
+    {
+        "titulo": "Visita ao Autódromo",
+        "imagem": "produtos_marketplace_exemplos/um_autodromo.jpeg",
+        "preco": "30",
+        "detalhes": "Visita guiada ao autódromo um dia antes do campeonato. Conheça a pista e os bastidores!"
     }
 ]

@@ -9,7 +9,7 @@ function HelpToggle({ texto }) {
                 ></path>
             </svg>
             <span
-                className="absolute w-48 opacity-0 group-hover:opacity-100 group-hover:translate-x-40 duration-700 text-sm bg-gray-100 p-2 rounded-lg"
+                className="absolute w-48 opacity-0 group-hover:opacity-100 lg:group-hover:translate-x-40 lg:group-hover:translate-y-0 group-hover:translate-y-10 group-hover:-translate-x-24  duration-1000 text-sm bg-gray-100 p-2 rounded-lg text-balance"
             >
                 <strong>{texto}</strong>
             </span>

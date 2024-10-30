@@ -30,13 +30,13 @@ function Header() {
                             <Link to="/live">Live</Link>
                         </li>
                         <li className="text-lg font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-blue-500">
-                            <Link to="/social">E-Social</Link>
+                            <Link to="/social">Social</Link>
                         </li>
                     </ul>
-                    <Link to="/" aria-label="E-Motion Grid" title="E-Motion Grid" className="inline-flex items-center lg:mx-auto">
+                    <Link to="/" aria-label="Motion-Grid" title="Motion-Grid" className="inline-flex items-center lg:mx-auto">
                         <GiCheckeredFlag className="w-8 h-8 text-white" /> {/* Ícone da bandeira */}
                         <span className="ml-2 lg:text-3xl sm:text-lg font-extrabold tracking-wide text-gray-100 uppercase">
-                            E-Motion Grid
+                            Motion-Grid
                         </span>
                     </Link>
                     <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
@@ -88,13 +88,13 @@ function Header() {
                                         <div>
                                             <Link
                                                 to="/"
-                                                aria-label="E-Motion Grid"
-                                                title="E-Motion Grid"
+                                                aria-label="Motion-Grid"
+                                                title="Motion-Grid"
                                                 className="inline-flex items-center"
                                             >
                                                 <GiCheckeredFlag className="w-8 h-8 text-deep-purple-accent-400" /> {/* Ícone da bandeira */}
                                                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                                                    E-Motion Grid
+                                                    Motion-Grid
                                                 </span>
                                             </Link>
                                         </div>
@@ -125,7 +125,7 @@ function Header() {
                                                 <Link to="/live">Live</Link>
                                             </li>
                                             <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
-                                                <Link to="/social">E-Social</Link>
+                                                <Link to="/social">Social</Link>
                                             </li>
                                             <li className="text-lg font-medium tracking-wide text-blue-600 transition-colors duration-200 hover:text-blue-950">
                                                 <Link to="/market">Marketplace</Link>
