@@ -67,7 +67,7 @@ function Social() {
                     <div className="flex justify-center items-center gap-3 my-3">
                         <IoShareSocial className="w-8 h-8 text-blue" /> {/* Ícone da bandeira */}
                         <span className="lg:text-3xl text-cyan-700 sm:text-lg font-extrabold tracking-wide">
-                            E-SOCIAL
+                            SOCIAL
                         </span>
                     </div>
                     <form
